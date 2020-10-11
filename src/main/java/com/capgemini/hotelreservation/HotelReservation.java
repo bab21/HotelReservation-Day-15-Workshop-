@@ -21,32 +21,14 @@ public class HotelReservation {
 				int hotelWeekEndRateRegularCustomer=s.nextInt();
 				System.out.println("Enter rating for the hotel(1-5)");
 				int rating=s.nextInt();
-				HotelUtility.addHotel(hotelName,hotelWeekDayRateRegularCustomer, hotelWeekEndRateRegularCustomer,rating);
+				System.out.println("Enter Hotel WeekDay Rate for Reward Customer");
+				int hotelWeekDayRateRewardCustomer=s.nextInt();
+				System.out.println("Enter Hotel WeekEnd Rate for Reward Customer");
+				int hotelWeekEndRateRewardCustomer=s.nextInt();
+				HotelUtility.addHotel(hotelName,hotelWeekDayRateRegularCustomer, hotelWeekEndRateRegularCustomer,rating,hotelWeekDayRateRewardCustomer,hotelWeekEndRateRewardCustomer);
 			}
 			
 		}while(choice==1);
 		
-		do{
-			System.out.println("Enter choice\n"
-			         + "1.Get Cheapest Best Rated Hotel \n"
-			         + "2.Get Best Rated Hotel with minimum cost\n"
-			         + "3.Exit");
-			if(choice==3)break;
-	        choice=s.nextInt();
-	        
-	        System.out.println("Enter start date(YEAR-MONTH-DAY)");
-			LocalDate startDate=LocalDate.parse(s.next());
-			System.out.println("Enter end date(YEAR-MONTH-DAY)");
-			LocalDate endDate=LocalDate.parse(s.next());
-			
-			switch(choice) {
-			case 1: HotelUtility.getCheapestBestRatedHotel(startDate, endDate);
-					break;
-			case 2:HotelUtility.getBestRatedHotel(startDate, endDate);
-			       break;
-			default:System.out.println("nothing");	
-			}
-			
-		}while(choice!=3);	
 	}
 }
