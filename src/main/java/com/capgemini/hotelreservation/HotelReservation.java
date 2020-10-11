@@ -30,5 +30,22 @@ public class HotelReservation {
 			
 		}while(choice==1);
 		
+		do{
+			System.out.println("Enter choice\n"
+			         + "1.Get Cheapest Best Rated Hotel for a range of date\n"
+			         + "2.Exit");
+	        choice=s.nextInt();
+			if(choice==1) {
+				System.out.println("Enter start date(YEAR-MONTH-DAY)");
+				LocalDate startDate=LocalDate.parse(s.next());
+				System.out.println("Enter end date(YEAR-MONTH-DAY)");
+				LocalDate endDate=LocalDate.parse(s.next());
+				System.out.println("Enter type of customer(regular/reward)");
+				String customerType=s.next();
+				HotelUtility.getCheapestBestRatedHotel(startDate, endDate,customerType);
+			}
+			
+		}while(choice==1);
+		
 	}
 }
