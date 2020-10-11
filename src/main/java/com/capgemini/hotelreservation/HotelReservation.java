@@ -28,17 +28,25 @@ public class HotelReservation {
 		
 		do{
 			System.out.println("Enter choice\n"
-			         + "1.Get Cheapest Best Rated Hotel for a range of date\n"
-			         + "2.Exit");
+			         + "1.Get Cheapest Best Rated Hotel \n"
+			         + "2.Get Best Rated Hotel with minimum cost\n"
+			         + "3.Exit");
+			if(choice==3)break;
 	        choice=s.nextInt();
-			if(choice==1) {
-				System.out.println("Enter start date(YEAR-MONTH-DAY)");
-				LocalDate startDate=LocalDate.parse(s.next());
-				System.out.println("Enter end date(YEAR-MONTH-DAY)");
-				LocalDate endDate=LocalDate.parse(s.next());
-				HotelUtility.getCheapestBestRatedHotel(startDate, endDate);
+	        
+	        System.out.println("Enter start date(YEAR-MONTH-DAY)");
+			LocalDate startDate=LocalDate.parse(s.next());
+			System.out.println("Enter end date(YEAR-MONTH-DAY)");
+			LocalDate endDate=LocalDate.parse(s.next());
+			
+			switch(choice) {
+			case 1: HotelUtility.getCheapestBestRatedHotel(startDate, endDate);
+					break;
+			case 2:HotelUtility.getBestRatedHotel(startDate, endDate);
+			       break;
+			default:System.out.println("nothing");	
 			}
 			
-		}while(choice==1);	
+		}while(choice!=3);	
 	}
 }
