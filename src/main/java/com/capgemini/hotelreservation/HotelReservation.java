@@ -19,26 +19,11 @@ public class HotelReservation {
 				int hotelWeekDayRateRegularCustomer=s.nextInt();
 				System.out.println("Enter Hotel WeekEnd Rate for Regular Customer");
 				int hotelWeekEndRateRegularCustomer=s.nextInt();
-				HotelUtility.addHotel(hotelName,hotelWeekDayRateRegularCustomer, hotelWeekEndRateRegularCustomer);
+				System.out.println("Enter rating for the hotel(1-5)");
+				int rating=s.nextInt();
+				HotelUtility.addHotel(hotelName,hotelWeekDayRateRegularCustomer, hotelWeekEndRateRegularCustomer,rating);
 			}
 			
 		}while(choice==1);
-		
-		
-		do{
-			System.out.println("Enter choice\n"
-			         + "1.Get Cheapest Hotel for a range of date\n"
-			         + "2.Exit");
-	        choice=s.nextInt();
-			if(choice==1) {
-				System.out.println("Enter start date(YEAR-MONTH-DAY)");
-				LocalDate startDate=LocalDate.parse(s.next());
-				System.out.println("Enter end date(YEAR-MONTH-DAY)");
-				LocalDate endDate=LocalDate.parse(s.next());
-				HotelUtility.getCheapestHotel(startDate, endDate);
-			}
-			
-		}while(choice==1);	
-		
 	}
 }
